@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="firstDiv shadow ">
+    <table class="table table-hover">
+      <thead >
+        <tr>
+          <th scope="col">Complaint Name</th>
+          <th scope="col">Driver/Operator Name</th>
+          <th scope="col">Complaint</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for description in descriptions %}
+        <tr>
+          <td>{{description.cname}}</td>
+          <td>{{description.dname}}</td>
+          <td>{{description.complaint_description}}</td>
+          <td>{{description.accident_date}}</td>
+          <td>{{description.accident_time}}</td>
+
+
+          <td style="color: black;">{{description.verification}}</td>
+
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+        </div>
+{% endblock content %}
